@@ -10,7 +10,7 @@ namespace GuiShopping.ProductAPI.Model
         [Column("name")]
         [Required]
         [StringLength(150)]
-        public string Name { get; set; }
+        public string ?Name { get; set; }
 
         [Column("price")]
         [Required]
@@ -19,14 +19,14 @@ namespace GuiShopping.ProductAPI.Model
         [Column("description")]
         [Required]
         [StringLength(500)]
-        public string Description { get; set; }
+        public string ?Description { get; set; }
         [Column("category_name")]
         [Required]
         [StringLength(50)]
-        public string CategoryName { get; set;}
+        public string ?CategoryName { get; set;}
         [Column("image_url")]
         [Required]
         [StringLength(300)]
-        public string Image_URL { get; set; }
+        public string ?Image_URL { get; set; }
     }
 }

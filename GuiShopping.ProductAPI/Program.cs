@@ -1,4 +1,7 @@
+using AutoMapper;
+using GuiShopping.ProductAPI.Config;
 using GuiShopping.ProductAPI.Model.Context;
+using GuiShopping.ProductAPI.repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
@@ -14,7 +17,14 @@ namespace GuiShopping.ProductAPI
             // Add services to the container.
             var connection = builder.Configuration["MySqlConnection:MySqlConnectionString"];
 
-            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection,ServerVersion.AutoDetect(connection)));
+            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            builder.Services.AddSingleton(mapper);
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
 
 
             builder.Services.AddControllers();
