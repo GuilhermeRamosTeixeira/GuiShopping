@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiShopping.Web", "GuiShopp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiShopping.ProductAPI", "GuiShopping.ProductAPI\GuiShopping.ProductAPI.csproj", "{538E1E16-EDCF-4FA5-8AF6-CBC8C4157ADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiShopping.IdentityServer", "GuiShopping.IdentityServer\GuiShopping.IdentityServer.csproj", "{FBFD2131-0FAD-4C13-A20C-4126F2C827F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{538E1E16-EDCF-4FA5-8AF6-CBC8C4157ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538E1E16-EDCF-4FA5-8AF6-CBC8C4157ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{538E1E16-EDCF-4FA5-8AF6-CBC8C4157ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFD2131-0FAD-4C13-A20C-4126F2C827F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFD2131-0FAD-4C13-A20C-4126F2C827F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFD2131-0FAD-4C13-A20C-4126F2C827F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFD2131-0FAD-4C13-A20C-4126F2C827F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{29A9E63D-49BA-4C45-BE69-9C51CDD29B14} = {ED830740-BA1B-4BF0-A1A4-871E0A4CA9D2}
 		{538E1E16-EDCF-4FA5-8AF6-CBC8C4157ADE} = {AD13D689-881B-4685-83C7-8C794FE02C4A}
+		{FBFD2131-0FAD-4C13-A20C-4126F2C827F3} = {AD13D689-881B-4685-83C7-8C794FE02C4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C9002AF-D924-4711-B717-8BE5C402D929}
