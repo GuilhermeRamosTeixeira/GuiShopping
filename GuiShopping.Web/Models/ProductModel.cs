@@ -1,9 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace GuiShopping.ProductAPI.Data.ValueObjects
+﻿namespace GuiShopping.Web.Models
 {
-    public class ProductVO
+    public class ProductModel
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -11,6 +8,5 @@ namespace GuiShopping.ProductAPI.Data.ValueObjects
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string Image_URL { get; set; }
-
     }
 }
