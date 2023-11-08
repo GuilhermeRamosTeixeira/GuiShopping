@@ -1,10 +1,11 @@
+using Duende.IdentityServer.Services;
 using GuiShopping.IdentityServer.Configuration;
 using GuiShopping.IdentityServer.Initializer;
 using GuiShopping.IdentityServer.Model;
 using GuiShopping.IdentityServer.Model.Context;
+using GuiShopping.IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace GuiShopping.IdentityServer
 {
@@ -18,47 +19,49 @@ namespace GuiShopping.IdentityServer
 
             var connection = builder.Configuration["MySqlConnection:MySqlConnectionString"];
 
-            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
+                connection,
+                new MySqlServerVersion(new Version(8, 0, 29)))
+            );
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<MySQLContext>()
                 .AddDefaultTokenProviders();
 
-
-
-            var builderIdentity = builder.Services.AddIdentityServer(options =>
+            var builderServices = builder.Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
                 options.EmitStaticAudienceClaim = true;
-            }).AddInMemoryIdentityResources(IdentityConfiguration.IdentityResources)
+            })
+                .AddInMemoryIdentityResources(IdentityConfiguration.IdentityResources)
                 .AddInMemoryApiScopes(IdentityConfiguration.ApiScopes)
                 .AddInMemoryClients(IdentityConfiguration.Clients)
                 .AddAspNetIdentity<ApplicationUser>();
 
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+            builder.Services.AddScoped<IProfileService, ProfileService>();
 
-            builderIdentity.AddDeveloperSigningCredential();
-            
+            builderServices.AddDeveloperSigningCredential();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            var scope = app.Services.CreateScope();
-
-            var dbInitializer = scope.ServiceProvider.GetService<IDbInitializer>();
+            var initializer = app.Services.CreateScope().ServiceProvider.GetService<IDbInitializer>();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
-            app.UseHttpsRedirection();
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -67,8 +70,7 @@ namespace GuiShopping.IdentityServer
 
             app.UseAuthorization();
 
-            dbInitializer.Initialize();
-
+            initializer.Initialize();
 
             app.MapControllerRoute(
                 name: "default",

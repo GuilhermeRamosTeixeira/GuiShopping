@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wHsDFvz/p+qMPuTmzsQoBaINksNGLk8Apx8dUQDgei8=",
+  "Hash": "9Euao7Pq8gLG1oZ2v2DkEBimgdObAPTTwd5GFEve1fY=",
   "Source": "GuiShopping.Web",
   "BasePath": "_content/GuiShopping.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "G:\\Repositório\\GuiShopping\\GuiShopping.Web\\wwwroot\\Images\\logo.png",
+      "SourceId": "GuiShopping.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Repositório\\GuiShopping\\GuiShopping.Web\\wwwroot\\",
+      "BasePath": "_content/GuiShopping.Web",
+      "RelativePath": "Images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
     },
     {
       "Identity": "G:\\Repositório\\GuiShopping\\GuiShopping.Web\\wwwroot\\js\\site.js",

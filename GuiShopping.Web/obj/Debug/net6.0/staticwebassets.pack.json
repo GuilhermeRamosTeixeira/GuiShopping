@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\GuiShopping.Web.bundle.scp.css"
     },
     {
+      "Id": "G:\\Repositório\\GuiShopping\\GuiShopping.Web\\wwwroot\\Images\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\logo.png"
+    },
+    {
       "Id": "G:\\Repositório\\GuiShopping\\GuiShopping.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
