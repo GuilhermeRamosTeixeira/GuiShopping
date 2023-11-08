@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5Aa52sqouvNqdZk6ZWHHq7SfqJio5x3LnPlNRQYWRpg=",
+  "Source": "GuiShopping.ProductAPI",
+  "BasePath": "_content/GuiShopping.ProductAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

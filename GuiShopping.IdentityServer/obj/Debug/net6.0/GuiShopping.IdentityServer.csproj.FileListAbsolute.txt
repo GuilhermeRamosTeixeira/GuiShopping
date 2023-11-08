@@ -1,5 +1,6 @@
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\appsettings.Development.json
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\appsettings.json
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\keys\is-signing-key-8584BDC68CF36BAB6931ABAB2817A0B9.json
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\GuiShopping.IdentityServer.staticwebassets.runtime.json
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\GuiShopping.IdentityServer.exe
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\GuiShopping.IdentityServer.deps.json
@@ -9,6 +10,7 @@ G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\GuiShopp
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Duende.IdentityServer.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Duende.IdentityServer.AspNetIdentity.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Duende.IdentityServer.Storage.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Humanizer.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\IdentityModel.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -17,12 +19,14 @@ G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsof
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
@@ -35,9 +39,14 @@ G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsof
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Mono.TextTemplating.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\MySqlConnector.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\System.CodeDom.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\System.Text.Json.dll
+G:\Repositório\GuiShopping\GuiShopping.IdentityServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\obj\Debug\net6.0\GuiShopping.IdentityServer.csproj.AssemblyReference.cache
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\obj\Debug\net6.0\GuiShopping.IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
 G:\Repositório\GuiShopping\GuiShopping.IdentityServer\obj\Debug\net6.0\GuiShopping.IdentityServer.AssemblyInfoInputs.cache

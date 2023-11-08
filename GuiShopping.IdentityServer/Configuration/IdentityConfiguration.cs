@@ -6,9 +6,9 @@ namespace GuiShopping.IdentityServer.Configuration
     public static class IdentityConfiguration
     {
         public const string Admin = "Admin";
-        public const string Customer = "Customer";
+        public const string Client = "Client";
 
-        public static IEnumerable<IdentityResource> identityResources =>
+        public static IEnumerable<IdentityResource> IdentityResources =>
             new List<IdentityResource>
             {
             new IdentityResources.OpenId(),
@@ -18,10 +18,10 @@ namespace GuiShopping.IdentityServer.Configuration
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("gui_shopping", "GuiShopping server"),
-                new ApiScope(name:"read", "Read Data"),
-                new ApiScope(name:"write", "Write Data"),
-                new ApiScope(name:"delete", "Delete Data")
+                new ApiScope("gui_shopping", "GuiShopping Server"),
+                new ApiScope(name:"read", "Read data."),
+                new ApiScope(name:"write", "Write data."),
+                new ApiScope(name:"delete", "Delete data.")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -39,8 +39,8 @@ namespace GuiShopping.IdentityServer.Configuration
                     ClientId = "gui_shopping",
                     ClientSecrets = {new Secret("My_super_secret".Sha256()) },
                     AllowedGrantTypes = GrantTypes.Code,
-                    RedirectUris={"http://localhost:5182/signin-oidc"},
-                    PostLogoutRedirectUris={ "http://localhost:5182/signout-callback-oidc" },
+                    RedirectUris={"https://localhost:4430/signin-oidc"},
+                    PostLogoutRedirectUris={ "https://localhost:4430/signout-callback-oidc" },
                     AllowedScopes= new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,

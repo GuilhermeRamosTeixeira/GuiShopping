@@ -1,4 +1,5 @@
 using GuiShopping.IdentityServer.Configuration;
+using GuiShopping.IdentityServer.Initializer;
 using GuiShopping.IdentityServer.Model;
 using GuiShopping.IdentityServer.Model.Context;
 using Microsoft.AspNetCore.Identity;
@@ -9,8 +10,10 @@ namespace GuiShopping.IdentityServer
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             var connection = builder.Configuration["MySqlConnection:MySqlConnectionString"];
@@ -21,22 +24,23 @@ namespace GuiShopping.IdentityServer
                 .AddEntityFrameworkStores<MySQLContext>()
                 .AddDefaultTokenProviders();
 
-           builder.Services.AddIdentityServer(options =>
+
+
+            var builderIdentity = builder.Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
                 options.EmitStaticAudienceClaim = true;
-            }).AddInMemoryIdentityResources(
-                IdentityConfiguration.identityResources)
-            .AddInMemoryApiScopes(IdentityConfiguration.ApiScopes)
-            .AddInMemoryClients(IdentityConfiguration.Clients)
-            .AddAspNetIdentity<ApplicationUser>().
+            }).AddInMemoryIdentityResources(IdentityConfiguration.IdentityResources)
+                .AddInMemoryApiScopes(IdentityConfiguration.ApiScopes)
+                .AddInMemoryClients(IdentityConfiguration.Clients)
+                .AddAspNetIdentity<ApplicationUser>();
 
+            builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
-            AddDeveloperSigningCredential();
-            
+            builderIdentity.AddDeveloperSigningCredential();
             
 
             // Add services to the container.
@@ -44,17 +48,27 @@ namespace GuiShopping.IdentityServer
 
             var app = builder.Build();
 
+            var scope = app.Services.CreateScope();
+
+            var dbInitializer = scope.ServiceProvider.GetService<IDbInitializer>();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
             app.UseIdentityServer();
+
             app.UseAuthorization();
+
+            dbInitializer.Initialize();
+
 
             app.MapControllerRoute(
                 name: "default",
