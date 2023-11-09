@@ -21,9 +21,7 @@ namespace GuiShopping.ProductAPI
             var connection = builder.Configuration["MySqlConnection:MySqlConnectionString"];
 
             builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
-                connection,
-                new MySqlServerVersion(new Version(8, 0, 29)))
-            );
+                connection, ServerVersion.AutoDetect(connection)));
 
 
             IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();

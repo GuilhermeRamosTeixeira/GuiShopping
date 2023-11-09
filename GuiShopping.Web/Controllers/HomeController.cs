@@ -1,8 +1,10 @@
 ﻿using GuiShopping.Web.Models;
+using GuiShopping.Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace GuiShopping.Web.Controllers
 {
@@ -10,14 +12,26 @@ namespace GuiShopping.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IProductService _productService;
+
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var token = await HttpContext.GetTokenAsync("access_token");
+            var products = await _productService.FindAllProducts(token);
+            return View(products);
+        }
+        [Authorize]
+        public async Task<IActionResult> Details(long id)
+        {
+            var token = await HttpContext.GetTokenAsync("access_token");
+            var model = await _productService.FindProductsById(id, token);
+            return View(model);
         }
 
         public IActionResult Privacy()
