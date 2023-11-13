@@ -1,3 +1,4 @@
+using AutoMapper;
 using GuiShopping.Web.Services;
 using GuiShopping.Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
@@ -12,7 +13,10 @@ namespace GuiShopping.Web
 
             builder.Services.AddHttpClient<IProductService, ProductService>(
                 c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"])
-            );
+            );       
+                builder.Services.AddHttpClient<ICartService, CartService>(
+                c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CartAPI"])
+               );
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

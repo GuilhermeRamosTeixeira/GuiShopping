@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
+﻿
 namespace GuiShopping.ProductAPI.Data.ValueObjects
 {
     public class ProductVO

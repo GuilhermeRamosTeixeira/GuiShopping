@@ -1,6 +1,7 @@
 using AutoMapper;
 using GuiShopping.CartAPI.Config;
 using GuiShopping.CartAPI.Model.Context;
+using GuiShopping.CartAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -25,7 +26,7 @@ namespace GuiShopping.CartAPI
             builder.Services.AddSingleton(mapper);
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<ICartRepository, CartRepository>();
 
             builder.Services.AddControllers();
 
